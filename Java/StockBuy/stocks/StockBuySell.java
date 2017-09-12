@@ -26,12 +26,13 @@ public class StockBuySell {
 				sell = i;
 				// System.out.println(sell);
 				maxDiff = diff;
-				// System.out.println(maxDiff);
+			
 			}
 		}
 
 		System.out.println("\nThe day to buy is " + buy + " at price " + stocks[buy]);
 		System.out.println("\nThe day to sell is " + sell + " at price " + stocks[sell]);
+		System.out.println("\nsThe maximum profit is " + maxDiff);
 
 	}
 }
