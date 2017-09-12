@@ -1,3 +1,7 @@
+/*
+ * The cost of a stock on each day is given in an array, 
+ * find the max profit that you can make by buying and selling in those days.
+ */
 package stocks;
 
 public class StockBuySell {
@@ -6,25 +10,23 @@ public class StockBuySell {
 		int buy = 0;
 		int sell = 0;
 		getBestTime(stocks, stocks.length);
-
 	}
 
 	private static void getBestTime(int[] stocks, int totalSize) {
 		int buy = 0, sell = 0, min = 0;
 		int maxDiff = 0;
-
+		// Prices must be given for at least two days
+        if (totalSize == 1)
+            return;
+        
 		for (int i = 0; i < totalSize; i++) {
 			if (stocks[i] < stocks[min]) {
 				min = i;
 			}
-			// System.out.println(min);
 			int diff = stocks[i] - stocks[min];
-			// System.out.println("diff" + diff);
 			if (diff > maxDiff) {
 				buy = min;
-				// System.out.println(buy);
 				sell = i;
-				// System.out.println(sell);
 				maxDiff = diff;
 			
 			}
